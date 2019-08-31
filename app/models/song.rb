@@ -13,7 +13,7 @@ class Song < ActiveRecord::Base
     # if Artist.all.map {|artist| artist.name}.include? "Drake"
     Artist.exists?(name: "Drake")
       self.artist = Artist.find_by(name: "Drake")
-    else 
+    else
       self.artist = Artist.new("Drake")
   end
 end
