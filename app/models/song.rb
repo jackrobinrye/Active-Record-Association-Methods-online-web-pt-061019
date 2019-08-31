@@ -11,11 +11,13 @@ class Song < ActiveRecord::Base
     # Drake doesn't exist in the database as an artist yet, so you'll have to create a record
     # Hint: you won't want to create an artist record every time this method is called, only if an Drake is *not found*
     # if Artist.all.map {|artist| artist.name}.include? "Drake"
-    if Artist.exists?(name: "Drake")
-      self.artist = Artist.find_by(name: "Drake")
-    else
-      self.artist = Artist.new(name: "Drake")
-    end
+    self.Artist = Artist.find_or_create_by(name: "Drake")
+    # 
+    # if Artist.exists?(name: "Drake")
+    #   self.artist = Artist.find_by(name: "Drake")
+    # else
+    #   self.artist = Artist.new(name: "Drake")
+    # end
     # binding.pry
   end
 
