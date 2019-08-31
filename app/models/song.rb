@@ -16,6 +16,7 @@ class Song < ActiveRecord::Base
     else
       self.artist = Artist.new(name: "Drake")
     end
+    binding.pry
   end
 
 end
