@@ -14,6 +14,6 @@ class Song < ActiveRecord::Base
     Artist.exists?(name: "Drake")
       self.artist = Artist.find_by(name: "Drake")
     else
-      self.artist = Artist.new("Drake")
+      self.artist = Artist.new(name: "Drake")
   end
 end
