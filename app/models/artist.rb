@@ -17,5 +17,5 @@ class Artist < ActiveRecord::Base
       song.genre
     end.uniq.count
   end
-  
+
 end
